@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "inventaire-quai",
     "public": "public",
     "ignore": [
       "firebase.json",
