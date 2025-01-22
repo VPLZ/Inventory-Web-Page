@@ -1,9 +1,3 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyA9MtjA_03b3ki7gl28pP5aO_yoyS0HWBE",
   authDomain: "stock-banana.firebaseapp.com",
@@ -14,5 +8,24 @@ const firebaseConfig = {
   appId: "1:750264543978:web:d076b501593b31bf454593"
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
+
+firebase.initializeApp(firebaseConfig);
+
+const auth = firebase.auth();
+
+auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL)
+  .then(() => {
+    console.log("Persistence set to local");
+  })
+  .catch((error) => {
+    console.error("Error setting persistence:", error);
+  });
+  
+auth.onAuthStateChanged((user) => {
+  if (!user) {
+    console.log("User is not logged in");
+    window.location.href = "/public/login.html";
+  } else {
+    console.log("User is logged in:", user);
+  }
+});
