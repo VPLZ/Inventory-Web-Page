@@ -12,14 +12,12 @@
             "key": "Content-Disposition",
             "value": "attachment"
           }
-        ],
+        ]
+      }
+    ],
     "site": "inventaire-quai",
     "public": "public",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {
         "source": "**",
