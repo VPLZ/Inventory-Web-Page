@@ -64,7 +64,10 @@
 
     auth.onAuthStateChanged((user) => {
       if (user) {
+        console.log('Utilisateur connecté');
         window.location.href = '/public/index.html';
+      }else{
+        console.log('Utilisateur non connecté');
       }
     });
   </script>

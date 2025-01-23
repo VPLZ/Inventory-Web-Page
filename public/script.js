@@ -24,7 +24,7 @@ auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL)
 auth.onAuthStateChanged((user) => {
   if (!user) {
     console.log("User is not logged in");
-    window.location.href = "/public/login.html";
+    window.location.href = "/login.html";
   } else {
     console.log("User is logged in:", user);
   }
